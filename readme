@@ -1,0 +1,10 @@
+Trying to learn React with a TODO-list project that implements a lot of the basics. 
+
+The primary functions: 
+We add new items to the list by writing the task to an input-field and pressing a button. 
+Doing this the new task/item will pop up under on a list. 
+On the already added list we have the option to check the task as completed or delete it completely. 
+
+Next up: 
+1. Adding a button that deletes everything. 
+2. Adding a "Are you sure" step when deleting an item or when deleting everything. 
