@@ -5,6 +5,9 @@ We add new items to the list by writing the task to an input-field and pressing 
 Doing this the new task/item will pop up under on a list. 
 On the already added list we have the option to check the task as completed or delete it completely. 
 
+
 Next up: 
-1. Adding a button that deletes everything. 
-2. Adding a "Are you sure" step when deleting an item or when deleting everything. 
+1. Adding a button that deletes everything. (Completed)
+2. Adding a "Are you sure" step when deleting an item or when deleting everything. (Completed)
+3. Adding a button that deletes completed tasks. (Completed)
+

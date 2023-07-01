@@ -23,6 +23,10 @@
     gap: 0.1rem;
   }
   
+  .buttons .btn{
+    margin: 2em;
+  }
+
   .btn {
     background: hsl(200, 100%, 50%, 0.1);
     border: 1px solid hsl(200, 100%, 50%);

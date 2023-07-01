@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { NewTodoForm } from "./NewTodoForm"
 import { TodoList } from "./TodoList"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./styles.css"
 
 
@@ -8,7 +10,7 @@ import "./styles.css"
 export default function App() {
   const [todos, setTodos] = useState(() => {
     const localvalue = localStorage.getItem("ITEMS")
-    if(localvalue == null) return[]
+    if (localvalue == null) return []
 
     return JSON.parse(localvalue)
   })
@@ -47,16 +49,28 @@ export default function App() {
     })
   }
 
+  function deleteAll() {
+      if(window.confirm("Are you sure you want to delete all tasks?"))
+      setTodos([]);
+  }
+
+  function deleteCompleted(){
+    setTodos(currentTodos =>{
+      return currentTodos.filter(todo => todo.completed == false)
+    })
+  }
+
   console.log(todos)
 
   return (
     <>
-    <h1>Hello! This is your personal Todo list</h1>
+      <h1>Hello! This is your personal Todo list</h1>
       <NewTodoForm onSubmit={addTodo} />
       <h1 className="header">Todo List</h1>
-      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo}/>
-      <div>
-      <button className="btn btn-danger">Delete all</button>
+      <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} deleteAll={deleteAll} deleteCompleted={deleteCompleted} />
+      <div className="buttons">
+        <button className="btn btn-dark" type="reset" onClick={() => deleteCompleted()}>Delete completed tasks</button>
+        <button className="btn btn-danger" type="reset" onClick={() => deleteAll()}>Delete All</button>
       </div>
     </>
   )
