@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import { NewTodoForm } from "./NewTodoForm"
 import { TodoList } from "./TodoList"
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import "./styles.css"
 
@@ -50,8 +49,11 @@ export default function App() {
   }
 
   function deleteAll() {
-      if(window.confirm("Are you sure you want to delete all tasks?"))
-      setTodos([]);
+        if(todos.length > 0)
+        if(window.confirm("Are you sure you want to delete all tasks?"))
+        setTodos([]);
+      
+
   }
 
   function deleteCompleted(){
